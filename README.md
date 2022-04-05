@@ -6,10 +6,11 @@ To setup the project, follow the below steps
 3.Update the username, password in application.properties.
 4.To sort the robots by key, modify the robot.sort.key in application.properties
 5.Build the jar and run it.
-6.API endpoints in below provides the survivors and robots information,
-http://localhost:8080/robots/survivors/infectedPer				
-http://localhost:8080/robots/survivors/nonInfectedPer
-http://localhost:8080/robots/survivors/infected					
-http://localhost:8080/robots/survivors/nonInfected
-http://localhost:8080/robots/all								
+6.API endpoints are(http://localhost:8080/robots/survivors/infectedPer , 
+http://localhost:8080/robots/survivors/nonInfectedPer ,
+http://localhost:8080/robots/survivors/infected	,				
+http://localhost:8080/robots/survivors/nonInfected ,
+http://localhost:8080/robots/all ).
+
+7.Refer the Robot-API.doc for more information.
 
