@@ -41,22 +41,16 @@ public class SurvivorServiceImpl implements ISurvivorService {
 
     @Override
     public String getInfectedSurvivorsPer() {
-        List<Survivor> sL = getSurvivors();
-        if (!sL.isEmpty()) {
-            int p = helper.getPercentage(sL, Constant.S_INFECTED);
-            return p + " %";
-        }
-        return S_PERCENTAGE;
+        int per = jdbcRobot.queryForObject(Constant.SQL_SURVIVOR_INFECTED_PER, Integer.class);
+        LOG.info("Infected percentage: {}", per);
+        return per + S_PERCENTAGE;
     }
 
     @Override
     public String getNonInfectedSurvivorsPer() {
-        List<Survivor> sL = getSurvivors();
-        if (!sL.isEmpty()) {
-            int p = helper.getPercentage(sL, Constant.S_NON_INFECTED);
-            return p + " %";
-        }
-        return S_PERCENTAGE;
+        int per = jdbcRobot.queryForObject(Constant.SQL_SURVIVOR_NON_INFECTED_PER, Integer.class);
+        LOG.info("Non Infected percentage: {}", per);
+        return per + S_PERCENTAGE;
     }
 
     @Override

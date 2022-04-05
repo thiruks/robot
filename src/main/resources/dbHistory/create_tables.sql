@@ -15,7 +15,8 @@ age             NUMBER(3),
 gender          VARCHAR2(1 CHAR),
 last_latitude	VARCHAR2(5 CHAR),
 last_longitude	VARCHAR2(5 CHAR),
-is_infected	    VARCHAR2(1 CHAR)	DEFAULT 'N'
+is_infected	    VARCHAR2(1 CHAR)	DEFAULT 'N',
+resources       VARCHAR2(10 CHAR)
 );
 
 --3.Create the comment on table and column
@@ -27,3 +28,4 @@ COMMENT ON COLUMN survivor.gender IS 'Holds the gender of survivor';
 COMMENT ON COLUMN survivor.last_latitude IS 'Holds the last location-latitude';
 COMMENT ON COLUMN survivor.last_longitude IS 'Holds the last location-longitude';
 COMMENT ON COLUMN survivor.is_infected IS 'Holds the infected status as Y for yes or N for No.';
+COMMENT ON COLUMN survivor.resources IS 'Holds the value of Water,Food,Medication,Ammunition.';

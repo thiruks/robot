@@ -12,6 +12,7 @@ public class Survivor {
     private String lastLatitude;
     private String lastLongitude;
     private String isInfected;
+    private String resources;
 
     public Long getId() {
         return id;
@@ -67,5 +68,13 @@ public class Survivor {
 
     public void setIsInfected(String isInfected) {
         this.isInfected = isInfected;
+    }
+
+    public String getResources() {
+        return resources;
+    }
+
+    public void setResources(String resources) {
+        this.resources = resources;
     }
 }
