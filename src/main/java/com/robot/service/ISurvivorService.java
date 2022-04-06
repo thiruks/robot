@@ -12,8 +12,6 @@ public interface ISurvivorService {
 
     public String getNonInfectedSurvivorsPer();
 
-    public List<Survivor> getSurvivors();
-
     public List<Survivor> getInfectedSurvivors();
 
     public List<Survivor> getNonInfectedSurvivors();

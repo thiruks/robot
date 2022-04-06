@@ -2,7 +2,6 @@ package com.robot.service;
 
 import com.robot.model.Survivor;
 import com.robot.util.Constant;
-import com.robot.util.Helper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,19 +24,6 @@ public class SurvivorServiceImpl implements ISurvivorService {
     @Autowired
     @Qualifier("jdbcRobot")
     private JdbcTemplate jdbcRobot;
-
-    @Autowired
-    private Helper helper;
-
-    @Override
-    public List<Survivor> getSurvivors() {
-        //Jdbc call for listing all survivor.
-        List<Survivor> lS = jdbcRobot.query(
-                Constant.SQL_SURVIVOR_LIST, BeanPropertyRowMapper.newInstance(Survivor.class));
-
-        LOG.info("Survivors results size: {}", lS.size());
-        return (lS.isEmpty()) ? new ArrayList<>() : lS;
-    }
 
     @Override
     public String getInfectedSurvivorsPer() {

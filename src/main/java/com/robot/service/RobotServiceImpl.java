@@ -16,7 +16,6 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 
@@ -64,8 +63,7 @@ public class RobotServiceImpl implements IRobotService {
         }
 
         LOG.info("Value before sort: {}", jsonList);
-        Collections.sort(jsonList, new Comparator<JSONObject>() {
-            public int compare(JSONObject a, JSONObject b) {
+        Collections.sort(jsonList, (a, b) -> {
                 String valA = " ";
                 String valB = " ";
                 try {
@@ -77,8 +75,7 @@ public class RobotServiceImpl implements IRobotService {
                 }
                 return valA.compareTo(valB);
             }
-        });
-
+        );
         LOG.info("Value after sort: {}", jsonList);
         return jsonList.isEmpty() ? sorted : jsonList.toString();
     }
